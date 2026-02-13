@@ -1,0 +1,12 @@
+<h1>Lista de posts</h1>
+<ul>
+    @for (p of posts$ | async ; track p.id) {
+        <li>
+            <a [routerLink]="['/posts',p.id]">{{ p.title }}</a>
+        </li>
+    }@empty {
+        <li>
+            No hay posts
+        </li>
+    }
+</ul>
